@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Resmi RT 004 / RW 018 - PK 7 Blok D</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+        :root { --gov-primary: #113f26; --gov-secondary: #1e5631; --gov-gold: #c5a059; --gov-light: #f4f6f8; }
+        body { background-color: var(--gov-light); font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; }
+        .top-bar { background-color: #0b2919; color: #d1e7dd; font-size: 0.85rem; padding: 6px 0; border-bottom: 3px solid var(--gov-gold); }
+        .gov-header { background: white; border-bottom: 1px solid #dee2e6; padding: 15px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+        .gov-logo-badge { width: 60px; height: 60px; background: linear-gradient(135deg, #113f26, #1e5631); color: white; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; font-weight: bold; border: 2px solid var(--gov-gold); box-shadow: 0 3px 6px rgba(0,0,0,0.15); }
+        .gov-logo-badge span { font-size: 0.7rem; line-height: 1; letter-spacing: 0.5px; }
+        .gov-logo-badge strong { font-size: 1.1rem; line-height: 1.1; }
+        .gov-logo-text h4 { color: var(--gov-primary); font-weight: 700; margin-bottom: 0; font-size: 1.25rem; }
+        .gov-logo-text p { color: #6c757d; font-size: 0.85rem; margin-bottom: 0; }
+        .navbar-gov { background-color: var(--gov-primary) !important; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .navbar-gov .nav-link { color: rgba(255,255,255,0.9) !important; font-weight: 600; padding: 12px 20px; transition: 0.2s; font-size: 1rem; cursor: pointer; border-radius: 4px; margin: 0 3px; }
+        .navbar-gov .nav-link:hover, .navbar-gov .nav-link.active { color: #fff !important; background-color: var(--gov-secondary); border-bottom: 3px solid var(--gov-gold); }
+        .card-stat-gov { border: none; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); border-left: 5px solid var(--gov-gold); background: white; transition: transform 0.2s; }
+        .card-stat-gov:hover { transform: translateY(-2px); }
+        .gov-card { background: white; border-radius: 8px; border: 1px solid #e3e6f0; box-shadow: 0 2px 4px rgba(0,0,0,0.02); margin-bottom: 20px; }
+        .gov-card-header { background-color: #f8f9fc; border-bottom: 1px solid #e3e6f0; padding: 12px 20px; font-weight: 600; color: var(--gov-primary); border-top-left-radius: 8px; border-top-right-radius: 8px; display: flex; justify-content: space-between; align-items: center; }
+        .gov-card-body { padding: 20px; }
+        .gov-footer { background-color: #0b2919; color: #adb5bd; font-size: 0.85rem; padding: 25px 0; border-top: 4px solid var(--gov-gold); margin-top: 40px; }
+        .gov-footer h5 { color: white; font-size: 1rem; font-weight: 600; margin-bottom: 12px; }
+        .badge-menempati { background-color: #d1e7dd; color: #0f5132; font-weight: 600; }
+        .badge-kosong { background-color: #fff3cd; color: #664d03; font-weight: 600; }
+        .badge-lunas { background-color: #198754; color: white; }
+        .badge-belum { background-color: #dc3545; color: white; }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div><i class="bi bi-shield-fill-check me-1 text-warning"></i> Portal Administrasi Warga RT 004 / RW 018</div>
+            <div><span>Desa Dayeuh, Kec. Cileungsi</span> | <span class="text-warning fw-bold"><i class="bi bi-cloud-check-fill text-success"></i> Terhubung ke Google Sheets</span></div>
+        </div>
+    </div>
+    <div class="gov-header">
+        <div class="container d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center gap-3">
+                <div class="gov-logo-badge"><span>PK 7</span><strong>RT 04</strong></div>
+                <div class="gov-logo-text">
+                    <h4>RT 004 / RW 018 DESA DAYEUH</h4>
+                    <p>Perumahan Pesona Kahuripan 7 - Blok D1 s/d D8, Kec. Cileungsi</p>
+                </div>
+            </div>
+            <div class="d-none d-md-block text-end"><span class="badge bg-success px-3 py-2 text-uppercase tracking-wide border border-warning">Portal Resmi Warga</span></div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-gov sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold d-lg-none text-white" href="#">PILIH MENU PORTAL</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav nav-pills gap-2" id="pills-tab" role="tablist">
+                    <li class="nav-item"><button class="nav-link active px-3" id="tab-kependudukan-btn" data-bs-toggle="pill" data-bs-target="#tab-kependudukan" type="button"><i class="bi bi-people-fill me-1"></i> 1. KEPENDUDUKAN</button></li>
+                    <li class="nav-item"><button class="nav-link px-3" id="tab-pencarian-btn" data-bs-toggle="pill" data-bs-target="#tab-pencarian" type="button"><i class="bi bi-search me-1"></i> 2. PENCARIAN & DETAIL WARGA</button></li>
+                    <li class="nav-item"><button class="nav-link px-3" id="tab-keuangan-btn" data-bs-toggle="pill" data-bs-target="#tab-keuangan" type="button"><i class="bi bi-wallet2 me-1"></i> 3. KEUANGAN & KAS RT 04</button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container my-4">
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="tab-kependudukan">
+                <h4 class="fw-bold text-success mb-3"><i class="bi bi-person-badge me-2"></i>Data Kependudukan RT 04 (Blok D1 s/d D8)</h4>
+                <div class="row g-3 mb-4">
+                    <div class="col-sm-6 col-xl-3"><div class="card card-stat-gov p-3"><div class="text-muted small text-uppercase fw-bold">Total Warga</div><h3 class="fw-bold text-success mt-1 mb-0" id="stat-tot-warga">0 Jiwa</h3><div class="small text-muted mt-2"><i class="bi bi-people-fill text-success me-1"></i> Seluruh Jiwa</div></div></div>
+                    <div class="col-sm-6 col-xl-3"><div class="card card-stat-gov p-3"><div class="text-muted small text-uppercase fw-bold">Kepala Keluarga (KK)</div><h3 class="fw-bold text-primary mt-1 mb-0" id="stat-kk">0 KK</h3><div class="small text-muted mt-2"><i class="bi bi-house-door-fill text-primary me-1"></i> Rumah Terdaftar</div></div></div>
+                    <div class="col-sm-6 col-xl-3"><div class="card card-stat-gov p-3"><div class="text-muted small text-uppercase fw-bold">Jumlah Anak</div><h3 class="fw-bold text-warning mt-1 mb-0" id="stat-anak">0 Anak</h3><div class="small text-muted mt-2"><i class="bi bi-emoji-smile text-warning me-1"></i> Usia Anak-anak</div></div></div>
+                    <div class="col-sm-6 col-xl-3"><div class="card card-stat-gov p-3"><div class="text-muted small text-uppercase fw-bold">Jumlah Lansia</div><h3 class="fw-bold text-danger mt-1 mb-0" id="stat-lansia">0 Lansia</h3><div class="small text-muted mt-2"><i class="bi bi-person-heart text-danger me-1"></i> Usia Lanjut</div></div></div>
+                </div>
+                <div class="gov-card">
+                    <div class="gov-card-header">
+                        <span><i class="bi bi-journal-text me-2"></i>Database Penduduk, Anggota Keluarga & Status IPL</span>
+                        <button class="btn btn-sm btn-success fw-bold px-3" data-bs-toggle="modal" data-bs-target="#modalTambahWarga"><i class="bi bi-person-plus-fill me-1"></i> Tambah Warga</button>
+                    </div>
+                    <div class="gov-card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-striped align-middle small">
+                                <thead class="table-success">
+                                    <tr><th>Blok & No Rumah</th><th>Nama Kepala Keluarga</th><th>No. WhatsApp / HP</th><th>Status Hunian</th><th>Jml Anggota</th><th>Anak</th><th>Lansia</th><th>Tarif IPL</th><th>Status IPL (Bulan Ini)</th></tr>
+                                </thead>
+                                <tbody id="tb-warga"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="tab-pencarian">
+                <h4 class="fw-bold text-success mb-3"><i class="bi bi-search me-2"></i>Pencarian Terperinci Data Warga & Status IPL</h4>
+                <div class="gov-card mb-4">
+                    <div class="gov-card-header bg-success text-white"><i class="bi bi-filter-square me-2"></i>Filter & Pencarian Spesifik Warga</div>
+                    <div class="gov-card-body">
+                        <div class="row g-3">
+                            <div class="col-md-4"><label class="form-label small fw-bold">Cari Nama / No. HP</label><input type="text" class="form-control form-control-sm" id="search-nama-menu" placeholder="Ketik nama atau no HP..." onkeyup="filterWargaAdvanced()"></div>
+                            <div class="col-md-4"><label class="form-label small fw-bold">Pilih / Cari Blok Rumah</label>
+                                <select class="form-select form-select-sm" id="filter-blok-menu" onchange="filterWargaAdvanced()">
+                                    <option value="">Semua Blok (D1 s.d D8)</option>
+                                    <option value="D1">Blok D1</option><option value="D2">Blok D2</option><option value="D3">Blok D3</option><option value="D4">Blok D4</option>
+                                    <option value="D5">Blok D5</option><option value="D6">Blok D6</option><option value="D7">Blok D7</option><option value="D8">Blok D8</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4"><label class="form-label small fw-bold">Status Pembayaran IPL (Bulan Ini)</label>
+                                <select class="form-select form-select-sm" id="filter-ipl-menu" onchange="filterWargaAdvanced()">
+                                    <option value="">Semua Status IPL</option><option value="Sudah Bayar">Sudah Bayar</option><option value="Belum Bayar">Belum Bayar</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gov-card">
+                    <div class="gov-card-header"><span><i class="bi bi-list-check me-2"></i>Hasil Pencarian & Detail Rincian Warga</span><span class="badge bg-primary" id="search-count">0 Ditemukan</span></div>
+                    <div class="gov-card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle small">
+                                <thead class="table-success"><tr><th>Blok & Rumah</th><th>Nama Kepala Keluarga</th><th>No. WhatsApp</th><th>Status Hunian</th><th>Demografi Keluarga</th><th>Tarif IPL</th><th>Status & Riwayat IPL</th></tr></thead>
+                                <tbody id="tb-search-result"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="tab-keuangan">
+                <h4 class="fw-bold text-success mb-3"><i class="bi bi-cash-stack me-2"></i>Keuangan & Kas RT 04</h4>
+                <div class="row g-3 mb-4">
+                    <div class="col-md-4"><div class="card card-stat-gov p-3"><div class="text-muted small text-uppercase fw-bold">Saldo Kas RT Aktif</div><h3 class="fw-bold text-success mt-1 mb-0" id="stat-saldo">Rp 0</h3><div class="small text-muted mt-2"><i class="bi bi-check-circle-fill text-success me-1"></i> Akumulasi Real-time</div></div></div>
+                    <div class="col-md-4"><div class="card card-stat-gov p-3"><div class="text-muted small text-uppercase fw-bold">Total Pemasukan IPL Masuk</div><h3 class="fw-bold text-primary mt-1 mb-0" id="stat-ipl">Rp 0</h3><div class="small text-muted mt-2"><i class="bi bi-arrow-down-left text-success me-1"></i> Akumulasi Multi-Bulan</div></div></div>
+                    <div class="col-md-4"><div class="card card-stat-gov p-3"><div class="text-muted small text-uppercase fw-bold">Total Pengeluaran Operasional</div><h3 class="fw-bold text-danger mt-1 mb-0" id="stat-pengeluaran">Rp 0</h3><div class="small text-muted mt-2"><i class="bi bi-arrow-up-right text-danger me-1"></i> Keamanan & Kebersihan</div></div></div>
+                </div>
+                <div class="row g-3">
+                    <div class="col-lg-4">
+                        <div class="gov-card mb-3">
+                            <div class="gov-card-header"><i class="bi bi-receipt me-2"></i>Input Pembayaran IPL</div>
+                            <div class="gov-card-body">
+                                <form id="formIPL">
+                                    <div class="mb-2"><label class="form-label small fw-bold">1. Filter Blok Rumah (Opsional)</label>
+                                        <select class="form-select form-select-sm mb-2" id="ipl-filter-blok" onchange="updateIPLDropdownFilter()">
+                                            <option value="">-- Semua Blok (D1 - D8) --</option>
+                                            <option value="D1">Blok D1</option><option value="D2">Blok D2</option><option value="D3">Blok D3</option><option value="D4">Blok D4</option>
+                                            <option value="D5">Blok D5</option><option value="D6">Blok D6</option><option value="D7">Blok D7</option><option value="D8">Blok D8</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-2"><label class="form-label small fw-bold">2. Pilih Warga / No Rumah</label>
+                                        <input type="text" class="form-control form-control-sm mb-1" id="ipl-search-nama" placeholder="🔍 Ketik Nama / No Rumah..." onkeyup="updateIPLDropdownFilter()">
+                                        <select class="form-select form-select-sm" id="ipl-rumah" required size="4" style="font-size: 0.85rem;"></select>
+                                    </div>
+                                    <div class="mb-2"><label class="form-label small fw-bold">Bulan Mulai Bayar</label>
+                                        <select class="form-select form-select-sm" id="ipl-bulan" required>
+                                            <option value="Januari">Januari</option><option value="Februari">Februari</option><option value="Maret">Maret</option>
+                                            <option value="April">April</option><option value="Mei">Mei</option><option value="Juni">Juni</option>
+                                            <option value="Juli">Juli</option><option value="Agustus">Agustus</option><option value="September">September</option>
+                                            <option value="Oktober" selected>Oktober</option><option value="November">November</option><option value="Desember">Desember</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-2"><label class="form-label small fw-bold">Jumlah Bulan (Jika Bayar Rangkap/Lebih)</label>
+                                        <input type="number" class="form-control form-control-sm" id="ipl-jml-bulan" value="1" min="1" max="12" required oninput="hitungNominalIPL()">
+                                        <div class="form-text text-muted" style="font-size: 0.75rem;">Otomatis mengalikan tarif rumah.</div>
+                                    </div>
+                                    <div class="mb-2"><label class="form-label small fw-bold">Total Nominal Dibayar (Rp)</label><input type="number" class="form-control form-control-sm" id="ipl-nominal" required></div>
+                                    <div class="mb-3"><label class="form-label small fw-bold">Keterangan / Catatan</label><input type="text" class="form-control form-control-sm" id="ipl-ket" placeholder="Misal: Lunas Oct"></div>
+                                    <button type="submit" class="btn btn-sm btn-success w-100 fw-bold" id="btn-submit-ipl"><i class="bi bi-check-circle me-1"></i> Simpan Pembayaran IPL</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="gov-card">
+                            <div class="gov-card-header"><i class="bi bi-journal-plus me-2"></i>Input Kas & Pengeluaran</div>
+                            <div class="gov-card-body">
+                                <form id="formKas">
+                                    <div class="mb-2"><label class="form-label small fw-bold">Tanggal</label><input type="date" class="form-control form-control-sm" id="kas-tgl" required></div>
+                                    <div class="mb-2"><label class="form-label small fw-bold">Kategori Transaksi</label>
+                                        <select class="form-select form-select-sm" id="kas-jenis" required>
+                                            <option value="Pemasukan Lain">Pemasukan Lain-lain (Donasi/Sewa)</option>
+                                            <option value="Pengeluaran Operasional">Pengeluaran Operasional (Satpam/Kebersihan)</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-2"><label class="form-label small fw-bold">Uraian / Keterangan</label><input type="text" class="form-control form-control-sm" id="kas-uraian" placeholder="Contoh: Gaji Satpam" required></div>
+                                    <div class="mb-2"><label class="form-label small fw-bold">Jumlah (Rp)</label><input type="number" class="form-control form-control-sm" id="kas-jumlah" placeholder="Nominal" required></div>
+                                    <div class="mb-3"><label class="form-label small fw-bold">Catatan</label><input type="text" class="form-control form-control-sm" id="kas-ket" placeholder="Opsional"></div>
+                                    <button type="submit" class="btn btn-sm btn-primary w-100 fw-bold" id="btn-submit-kas"><i class="bi bi-save me-1"></i> Rekam Kas</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="gov-card mb-3">
+                            <div class="gov-card-header bg-success text-white">
+                                <span><i class="bi bi-bar-chart-fill me-2"></i>Rekap Keuangan Per Bulan</span>
+                                <select class="form-select form-select-sm w-auto" id="filter-rekap-tahun" onchange="renderRekapBulanan()">
+                                    <option value="2026" selected>Tahun 2026</option><option value="2025">Tahun 2025</option>
+                                </select>
+                            </div>
+                            <div class="gov-card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover table-bordered align-middle small text-center">
+                                        <thead class="table-light"><tr><th>Bulan</th><th>Pemasukan IPL (Rp)</th><th>Pemasukan Lain (Rp)</th><th>Total Masuk (Rp)</th><th>Pengeluaran (Rp)</th><th>Saldo Bulan Ini (Rp)</th></tr></thead>
+                                        <tbody id="tb-rekap-bulanan"></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gov-card mb-3">
+                            <div class="gov-card-header"><i class="bi bi-table me-2"></i>Tabel Riwayat & Akumulasi Pembayaran IPL Warga</div>
+                            <div class="gov-card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover align-middle small">
+                                        <thead class="table-success"><tr><th>Rumah</th><th>Nama Kepala Keluarga</th><th>Bulan / Periode</th><th>Nominal</th><th>Status</th><th>Catatan</th></tr></thead>
+                                        <tbody id="tb-ipl-riwayat"></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gov-card">
+                            <div class="gov-card-header"><i class="bi bi-journal-text me-2"></i>Buku Kas Utama RT 04</div>
+                            <div class="gov-card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover align-middle small">
+                                        <thead class="table-light"><tr><th>Tanggal</th><th>Uraian</th><th>Kategori</th><th>Masuk (Rp)</th><th>Keluar (Rp)</th><th>Catatan</th></tr></thead>
+                                        <tbody id="tb-kas"></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL TAMBAH WARGA -->
+    <div class="modal fade" id="modalTambahWarga" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title fs-6 fw-bold"><i class="bi bi-person-plus-fill me-2"></i>Form Pendaftaran Warga Blok D</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <form id="formTambahWarga">
+                    <div class="modal-body small">
+                        <div class="mb-2"><label class="form-label fw-bold">Blok & Nomor Rumah</label><input type="text" class="form-control form-control-sm" id="w-blok" placeholder="Contoh: Blok D1/05" required></div>
+                        <div class="mb-2"><label class="form-label fw-bold">Nama Kepala Keluarga</label><input type="text" class="form-control form-control-sm" id="w-nama" placeholder="Nama Lengkap Bpk/Ibu" required></div>
+                        <div class="mb-2"><label class="form-label fw-bold">No. WhatsApp / HP</label><input type="text" class="form-control form-control-sm" id="w-hp" placeholder="08xxxxxxxxxx"></div>
+                        <div class="mb-2"><label class="form-label fw-bold">Status Hunian</label>
+                            <select class="form-select form-select-sm" id="w-status" required>
+                                <option value="Menempati">Menempati (Tarif IPL: Rp 60.000 / bln)</option>
+                                <option value="Belum Menempati">Belum Menempati / Kosong (Tarif IPL: Rp 35.000 / bln)</option>
+                            </select>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 mb-2"><label class="form-label fw-bold">Jml Anggota</label><input type="number" class="form-control form-control-sm" id="w-jml" value="4" min="0" required></div>
+                            <div class="col-md-4 mb-2"><label class="form-label fw-bold">Jml Anak</label><input type="number" class="form-control form-control-sm" id="w-anak" value="2" min="0" required></div>
+                            <div class="col-md-4 mb-2"><label class="form-label fw-bold">Jml Lansia</label><input type="number" class="form-control form-control-sm" id="w-lansia" value="0" min="0" required></div>
+                        </div>
+                        <div class="mb-2"><label class="form-label fw-bold">Keterangan / Status Rumah</label><input type="text" class="form-control form-control-sm" id="w-ket" placeholder="Warga Tetap / Kontrak"></div>
+                    </div>
+                    <div class="modal-footer bg-light">
+                        <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Batal</button>
+                        <button type="submit" class="btn btn-sm btn-success fw-bold" id="btn-submit-warga">Simpan Data Warga</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="gov-footer">
+        <div class="container text-center text-md-start">
+            <div class="row">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <h5>RT 004 / RW 018 DESA DAYEUH</h5>
+                    <p class="small mb-0">Perumahan Pesona Kahuripan 7 Blok D, Kecamatan Cileungsi, Kabupaten Bogor, Jawa Barat.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="small text-muted mb-0">Sistem Informasi Data Kependudukan & Keuangan Warga</p>
+                    <p class="small text-warning mb-0">&copy; 2026 RT 004 / RW 018</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzrM8AU4dy9CcrDvARSK8_Ruu6tnLUxYLiWHWY4uMjJ4bnUsx3eABWVxLgKHRmEvOUh/exec";
+
+        document.getElementById('kas-tgl').valueAsDate = new Date();
+
+        let dataWarga = [
+            { blok: "Blok D1/01", nama: "Bpk. Ahmad", hp: "08123456789", status: "Menempati", tarif: 60000, jml: 4, anak: 2, lansia: 0, ket: "Warga Tetap" },
+            { blok: "Blok D1/02", nama: "Bpk. Budi", hp: "08571234567", status: "Menempati", tarif: 60000, jml: 3, anak: 1, lansia: 0, ket: "Warga Kontrak" },
+            { blok: "Blok D2/01", nama: "Bpk. Chaniago", hp: "08139876543", status: "Belum Menempati", tarif: 35000, jml: 0, anak: 0, lansia: 0, ket: "Rumah Kosong" },
+            { blok: "Blok D3/05", nama: "Bpk. Dedi", hp: "08198765432", status: "Menempati", tarif: 60000, jml: 5, anak: 3, lansia: 1, ket: "Warga Tetap" },
+            { blok: "Blok D4/12", nama: "Bpk. Eko", hp: "08121122334", status: "Menempati", tarif: 60000, jml: 2, anak: 0, lansia: 0, ket: "Warga Tetap" },
+            { blok: "Blok D5/08", nama: "Bpk. Farhan", hp: "08567788990", status: "Belum Menempati", tarif: 35000, jml: 0, anak: 0, lansia: 0, ket: "Rumah Kosong" },
+            { blok: "Blok D6/03", nama: "Bpk. Gunawan", hp: "08134455667", status: "Menempati", tarif: 60000, jml: 4, anak: 2, lansia: 1, ket: "Warga Tetap" },
+            { blok: "Blok D7/10", nama: "Bpk. Hendra", hp: "08189900112", status: "Menempati", tarif: 60000, jml: 3, anak: 1, lansia: 0, ket: "Warga Tetap" },
+            { blok: "Blok D8/02", nama: "Bpk. Indra", hp: "08123344556", status: "Belum Menempati", tarif: 35000, jml: 0, anak: 0, lansia: 0, ket: "Rumah Kosong" }
+        ];
+
+        let dataIPL = [
+            { blok: "Blok D1/01", nama: "Bpk. Ahmad", bulan: "Oktober", tahun: "2026", nominal: 60000, ket: "Transfer via Bank" },
+            { blok: "Blok D1/02", nama: "Bpk. Budi", bulan: "Oktober", tahun: "2026", nominal: 60000, ket: "Tunai ke Bendahara" },
+            { blok: "Blok D2/01", nama: "Bpk. Chaniago", bulan: "Oktober", tahun: "2026", nominal: 35000, ket: "Transfer Warga" }
+        ];
+
+        let dataKas = [
+            { tgl: "2026-10-01", bulan: "Oktober", tahun: "2026", uraian: "Saldo Awal Kas Bulan Oktober", kat: "Pemasukan Lain", masuk: 2500000, keluar: 0, ket: "Saldo Operasional" },
+            { tgl: "2026-10-02", bulan: "Oktober", tahun: "2026", uraian: "Sewa Lapangan/Fasum Warga", kat: "Pemasukan Lain", masuk: 150000, keluar: 0, ket: "Acara Warga" },
+            { tgl: "2026-10-03", bulan: "Oktober", tahun: "2026", uraian: "Honor Petugas Keamanan & Kebersihan", kat: "Pengeluaran Operasional", masuk: 0, keluar: 1200000, ket: "Gaji Bulanan" }
+        ];
+
+        function renderAll() {
+            let totalJiwa = 0, totalAnak = 0, totalLansia = 0;
+            dataWarga.forEach((w) => {
+                totalJiwa += parseInt(w.jml || 0);
+                totalAnak += parseInt(w.anak || 0);
+                totalLansia += parseInt(w.lansia || 0);
+            });
+
+            document.getElementById("stat-tot-warga").innerText = totalJiwa + " Jiwa";
+            document.getElementById("stat-kk").innerText = dataWarga.length + " KK";
+            document.getElementById("stat-anak").innerText = totalAnak + " Anak";
+            document.getElementById("stat-lansia").innerText = totalLansia + " Lansia";
+
+            renderTabelWargaKependudukan(dataWarga);
+            filterWargaAdvanced();
+            updateIPLDropdownFilter();
+            renderRekapBulanan();
+
+            let htmlIPL = "", totalIPL = 0;
+            dataIPL.forEach(i => {
+                totalIPL += parseInt(i.nominal);
+                htmlIPL += `<tr>
+                    <td class="fw-bold">${i.blok}</td>
+                    <td>${i.nama}</td>
+                    <td><span class="badge bg-secondary">${i.bulan} ${i.tahun || '2026'}</span></td>
+                    <td class="fw-bold text-success">Rp ${parseInt(i.nominal).toLocaleString('id-ID')}</td>
+                    <td><span class="badge badge-lunas">Lunas</span></td>
+                    <td>${i.ket}</td>
+                </tr>`;
+            });
+            document.getElementById("tb-ipl-riwayat").innerHTML = htmlIPL;
+
+            let htmlKas = "", totalPemasukanLain = 0, totalPengeluaran = 0;
+            dataKas.forEach(k => {
+                if(k.kat === "Pemasukan Lain") totalPemasukanLain += parseInt(k.masuk);
+                if(k.kat === "Pengeluaran Operasional") totalPengeluaran += parseInt(k.keluar);
+
+                htmlKas += `<tr>
+                    <td>${k.tgl}</td>
+                    <td class="fw-bold">${k.uraian}</td>
+                    <td><span class="badge ${k.masuk > 0 ? 'bg-success' : 'bg-danger'}">${k.kat}</span></td>
+                    <td class="text-success fw-bold">${k.masuk > 0 ? 'Rp ' + parseInt(k.masuk).toLocaleString('id-ID') : '-'}</td>
+                    <td class="text-danger fw-bold">${k.keluar > 0 ? 'Rp ' + parseInt(k.keluar).toLocaleString('id-ID') : '-'}</td>
+                    <td>${k.ket}</td>
+                </tr>`;
+            });
+            document.getElementById("tb-kas").innerHTML = htmlKas;
+
+            let totalSaldo = (2500000 + totalIPL + totalPemasukanLain) - totalPengeluaran;
+            document.getElementById("stat-saldo").innerText = "Rp " + totalSaldo.toLocaleString('id-ID');
+            document.getElementById("stat-ipl").innerText = "Rp " + totalIPL.toLocaleString('id-ID');
+            document.getElementById("stat-pengeluaran").innerText = "Rp " + totalPengeluaran.toLocaleString('id-ID');
+
+            hitungNominalIPL();
+        }
+
+        function updateIPLDropdownFilter() {
+            let filterBlokVal = document.getElementById("ipl-filter-blok").value;
+            let queryNama = document.getElementById("ipl-search-nama").value.toLowerCase();
+
+            let filtered = dataWarga.filter(w => {
+                let matchBlok = filterBlokVal === "" || w.blok.includes(filterBlokVal);
+                let matchNama = (w.nama.toLowerCase().includes(queryNama) || w.blok.toLowerCase().includes(queryNama));
+                return matchBlok && matchNama;
+            });
+
+            let select = document.getElementById("ipl-rumah");
+            select.innerHTML = "";
+            filtered.forEach(w => {
+                let opt = document.createElement("option");
+                opt.value = w.blok;
+                opt.setAttribute("data-tarif", w.tarif);
+                opt.textContent = `${w.blok} - ${w.nama} (Tarif: Rp ${w.tarif.toLocaleString('id-ID')})`;
+                select.appendChild(opt);
+            });
+
+            if(filtered.length > 0) select.selectedIndex = 0;
+            hitungNominalIPL();
+        }
+
+        function renderRekapBulanan() {
+            let tahunPilih = document.getElementById("filter-rekap-tahun").value;
+            let listBulan = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+            
+            let htmlRekap = "";
+            listBulan.forEach(bln => {
+                let totalIplBulan = dataIPL
+                    .filter(i => i.bulan.toLowerCase().includes(bln.toLowerCase()) && (i.tahun === tahunPilih || !i.tahun))
+                    .reduce((sum, i) => sum + parseInt(i.nominal), 0);
+
+                let totalMasukLainBulan = dataKas
+                    .filter(k => k.kat === "Pemasukan Lain" && k.tgl.startsWith(tahunPilih) && k.bulan && k.bulan.toLowerCase() === bln.toLowerCase())
+                    .reduce((sum, k) => sum + parseInt(k.masuk), 0);
+
+                let totalKeluarBulan = dataKas
+                    .filter(k => k.kat === "Pengeluaran Operasional" && k.tgl.startsWith(tahunPilih) && k.bulan && k.bulan.toLowerCase() === bln.toLowerCase())
+                    .reduce((sum, k) => sum + parseInt(k.keluar), 0);
+
+                let totalMasukBulan = totalIplBulan + totalMasukLainBulan;
+                let saldoBulanIni = totalMasukBulan - totalKeluarBulan;
+
+                htmlRekap += `<tr>
+                    <td class="fw-bold text-success">${bln}</td>
+                    <td class="text-primary fw-bold">Rp ${totalIplBulan.toLocaleString('id-ID')}</td>
+                    <td class="text-success">Rp ${totalMasukLainBulan.toLocaleString('id-ID')}</td>
+                    <td class="fw-bold">Rp ${totalMasukBulan.toLocaleString('id-ID')}</td>
+                    <td class="text-danger fw-bold">Rp ${totalKeluarBulan.toLocaleString('id-ID')}</td>
+                    <td class="fw-bold ${saldoBulanIni >= 0 ? 'text-success' : 'text-danger'}">Rp ${saldoBulanIni.toLocaleString('id-ID')}</td>
+                </tr>`;
+            });
+            document.getElementById("tb-rekap-bulanan").innerHTML = htmlRekap;
+        }
+
+        function renderTabelWargaKependudukan(listWarga) {
+            let htmlWarga = "";
+            listWarga.forEach((w) => {
+                let badgeClass = w.status === "Menempati" ? "badge-menempati" : "badge-kosong";
+                let sudahBayar = dataIPL.some(i => i.blok === w.blok && i.bulan.toLowerCase().includes("oktober"));
+                let statusIplBadge = sudahBayar 
+                    ? `<span class="badge badge-lunas"><i class="bi bi-check-circle-fill me-1"></i> Sudah Bayar</span>` 
+                    : `<span class="badge badge-belum"><i class="bi bi-exclamation-circle-fill me-1"></i> Belum Bayar</span>`;
+
+                htmlWarga += `<tr>
+                    <td class="fw-bold text-success">${w.blok}</td>
+                    <td>${w.nama}</td>
+                    <td>${w.hp}</td>
+                    <td><span class="badge ${badgeClass}">${w.status}</span></td>
+                    <td><strong>${w.jml}</strong> Jiwa</td>
+                    <td>${w.anak} Anak</td>
+                    <td>${w.lansia} Lansia</td>
+                    <td class="fw-bold">Rp ${w.tarif.toLocaleString('id-ID')}</td>
+                    <td>${statusIplBadge}</td>
+                </tr>`;
+            });
+            document.getElementById("tb-warga").innerHTML = htmlWarga;
+        }
+
+        function filterWargaAdvanced() {
+            let queryNama = document.getElementById("search-nama-menu").value.toLowerCase();
+            let filterBlok = document.getElementById("filter-blok-menu").value;
+            let filterStatusIpl = document.getElementById("filter-ipl-menu").value;
+
+            let filtered = dataWarga.filter(w => {
+                let matchNama = (w.nama.toLowerCase().includes(queryNama) || w.hp.includes(queryNama) || w.blok.toLowerCase().includes(queryNama));
+                let matchBlok = filterBlok === "" || w.blok.includes(filterBlok);
+                let iplRecords = dataIPL.filter(i => i.blok === w.blok);
+                let statusIplStr = iplRecords.length > 0 ? "Sudah Bayar" : "Belum Bayar";
+                let matchIpl = filterStatusIpl === "" || statusIplStr === filterStatusIpl;
+                return matchNama && matchBlok && matchIpl;
+            });
+
+            document.getElementById("search-count").innerText = filtered.length + " Ditemukan";
+
+            let htmlResult = "";
+            filtered.forEach(w => {
+                let badgeClass = w.status === "Menempati" ? "badge-menempati" : "badge-kosong";
+                let iplRecords = dataIPL.filter(i => i.blok === w.blok);
+                let iplDetailHtml = "";
+                if(iplRecords.length > 0) {
+                    iplDetailHtml = `<span class="badge badge-lunas mb-1"><i class="bi bi-check-circle me-1"></i> Sudah Bayar</span><br>`;
+                    iplRecords.forEach(r => {
+                        iplDetailHtml += `<small class="text-muted">• ${r.bulan} ${r.tahun || '2026'}: Rp ${parseInt(r.nominal).toLocaleString('id-ID')} (${r.ket})</small><br>`;
+                    });
+                } else {
+                    iplDetailHtml = `<span class="badge badge-belum"><i class="bi bi-exclamation-circle me-1"></i> Belum Bayar Bulan Ini</span>`;
+                }
+
+                htmlResult += `<tr>
+                    <td class="fw-bold text-success">${w.blok}</td>
+                    <td>${w.nama}</td>
+                    <td>${w.hp}</td>
+                    <td><span class="badge ${badgeClass}">${w.status}</span></td>
+                    <td>
+                        <strong>${w.jml}</strong> Jiwa Total<br>
+                        <small class="text-muted">${w.anak} Anak, ${w.lansia} Lansia</small><br>
+                        <small class="text-secondary">Ket: ${w.ket || '-'}</small>
+                    </td>
+                    <td class="fw-bold">Rp ${w.tarif.toLocaleString('id-ID')}</td>
+                    <td>${iplDetailHtml}</td>
+                </tr>`;
+            });
+            document.getElementById("tb-search-result").innerHTML = htmlResult;
+        }
+
+        function hitungNominalIPL() {
+            let select = document.getElementById("ipl-rumah");
+            let selectedOpt = select.options[select.selectedIndex];
+            if(!selectedOpt) return;
+            let blokVal = selectedOpt.value;
+            let warga = dataWarga.find(w => w.blok === blokVal);
+            if(warga) {
+                let jmlBulan = parseInt(document.getElementById("ipl-jml-bulan").value) || 1;
+                document.getElementById("ipl-nominal").value = warga.tarif * jmlBulan;
+            }
+        }
+
+        document.getElementById("ipl-rumah").addEventListener("change", hitungNominalIPL);
+
+        async function sendToGoogleSheets(sheetName, rowData, btnElement, originalText) {
+            btnElement.disabled = true;
+            btnElement.innerHTML = `<span class="spinner-border spinner-border-sm me-1"></span> Menyimpan ke Google Sheets...`;
+            try {
+                await fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ sheetName: sheetName, row: rowData })
+                });
+                alert("Data berhasil disimpan & disinkronkan ke Google Spreadsheet!");
+            } catch (error) {
+                console.error(error);
+                alert("Data tersimpan lokal, namun gagal sync ke Google Sheets. Periksa koneksi internet Anda.");
+            } finally {
+                btnElement.disabled = false;
+                btnElement.innerHTML = originalText;
+            }
+        }
+
+        document.getElementById("formTambahWarga").addEventListener("submit", async function(e) {
+            e.preventDefault();
+            let blok = document.getElementById("w-blok").value;
+            let nama = document.getElementById("w-nama").value;
+            let hp = document.getElementById("w-hp").value;
+            let status = document.getElementById("w-status").value;
+            let jml = parseInt(document.getElementById("w-jml").value);
+            let anak = parseInt(document.getElementById("w-anak").value);
+            let lansia = parseInt(document.getElementById("w-lansia").value);
+            let ket = document.getElementById("w-ket").value;
+            let tarif = status === "Menempati" ? 60000 : 35000;
+
+            dataWarga.push({ blok, nama, hp, status, tarif, jml, anak, lansia, ket });
+            let btn = document.getElementById("btn-submit-warga");
+            await sendToGoogleSheets("Warga", [blok, nama, hp, status, tarif, jml, anak, lansia, ket], btn, "Simpan Data Warga");
+            renderAll();
+            bootstrap.Modal.getInstance(document.getElementById('modalTambahWarga')).hide();
+            this.reset();
+        });
+
+        document.getElementById("formIPL").addEventListener("submit", async function(e) {
+            e.preventDefault();
+            let blok = document.getElementById("ipl-rumah").value;
+            let warga = dataWarga.find(w => w.blok === blok);
+            let bulanMulai = document.getElementById("ipl-bulan").value;
+            let tahunIni = "2026";
+            let jmlBulanVal = document.getElementById("ipl-jml-bulan").value;
+            let nominal = document.getElementById("ipl-nominal").value;
+            let catatanUser = document.getElementById("ipl-ket").value;
+
+            let bulanStr = jmlBulanVal > 1 ? `${bulanMulai} (+${jmlBulanVal-1} bln)` : bulanMulai;
+            let ket = catatanUser ? catatanUser : `Bayar ${jmlBulanVal} bulan`;
+
+            dataIPL.push({ blok, nama: warga ? warga.nama : "-", bulan: bulanStr, tahun: tahunIni, nominal, ket });
+            let btn = document.getElementById("btn-submit-ipl");
+            await sendToGoogleSheets("IPL", [blok, warga ? warga.nama : "-", bulanStr, tahunIni, nominal, ket], btn, '<i class="bi bi-check-circle me-1"></i> Simpan Pembayaran IPL');
+            renderAll();
+            this.reset();
+            document.getElementById('ipl-jml-bulan').value = 1;
+        });
+
+        document.getElementById("formKas").onsubmit = async function(e) {
+            e.preventDefault();
+            let tgl = document.getElementById("kas-tgl").value;
+            let jenis = document.getElementById("kas-jenis").value;
+            let uraian = document.getElementById("kas-uraian").value;
+            let jumlah = document.getElementById("kas-jumlah").value;
+            let ket = document.getElementById("kas-ket").value;
+
+            let bulanNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+            let tglObj = new Date(tgl);
+            let bulanStr = bulanNames[tglObj.getMonth()];
+            let tahunStr = tglObj.getFullYear().toString();
+
+            let masuk = jenis === "Pemasukan Lain" ? jumlah : 0;
+            let keluar = jenis === "Pengeluaran Operasional" ? jumlah : 0;
+
+            dataKas.push({ tgl, bulan: bulanStr, tahun: tahunStr, uraian, kat: jenis, masuk, keluar, ket });
+            let btn = document.getElementById("btn-submit-kas");
+            await sendToGoogleSheets("Kas", [tgl, uraian, jenis, masuk, keluar, ket], btn, '<i class="bi bi-save me-1"></i> Rekam Kas');
+            renderAll();
+            this.reset();
+            document.getElementById('kas-tgl').valueAsDate = new Date();
+        };
+
+        renderAll();
+    </script>
+</body>
+</html>
